@@ -7,6 +7,9 @@ os:
   - osx
   - windows
 
+env:
+  - BUILD_TYPE=Release
+
 compiler:
   - gcc
 
@@ -16,10 +19,10 @@ before_script:
   # switch to build directory
   - cd build
   # run cmake where CMakeLists.txt is located
-  - cmake ../src
+  - cmake ../src -DCMAKE_BUILD_TYPE=$BUILD_TYPE
 
 script:
   # once CMake has done its job we just build using make as usual
-  - cmake --build .
+  - cmake --build . --config $BUILD_TYPE
   # if the project uses ctest we can run the tests like this
-  - ctest -C Release
+  - ctest -C $BUILD_TYPE
