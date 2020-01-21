@@ -22,4 +22,4 @@ script:
   # once CMake has done its job we just build using make as usual
   - cmake --build .
   # if the project uses ctest we can run the tests like this
-  - ctest
+  - ctest -C Release
