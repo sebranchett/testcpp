@@ -1,0 +1,20 @@
+language: cpp
+# adapted from
+# https://riptutorial.com/cmake/example/4722/configure-travis-ci-with-stock-cmake
+
+compiler:
+  - gcc
+
+before_script:
+  # create a build folder for the out-of-source build
+  - mkdir build
+  # switch to build directory
+  - cd build
+  # run cmake where CMakeLists.txt is located
+  - cmake ../src
+
+script:
+  # once CMake has done its job we just build using make as usual
+  - make
+  # if the project uses ctest we can run the tests like this
+  - make test
