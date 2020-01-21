@@ -2,6 +2,7 @@
 // Addapted from https://cmake.org/cmake/help/latest/guide/tutorial/index.html
 #include <cmath>
 #include <iostream>
+#include <stdlib.h>     /* atof */
 
 int main(int argc, char* argv[])
 {
