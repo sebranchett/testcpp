@@ -51,5 +51,5 @@ jobs:
       # if: failure()
       uses: actions/upload-artifact@v1
       with:
-        name: "${{ matrix.os }}"_LatestTest.log
+        name: "${{ matrix.os }}"
         path: src/tutorial.cxx
