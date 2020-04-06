@@ -47,12 +47,13 @@ jobs:
       run: ctest -C $BUILD_TYPE
 
     - name: Upload logs
+      # shell: bash
       # if: failure()
-      # uses: actions/upload-artifact@v1
-      # with:
-      #   name: tutorial.cxx
-      #   path: testcpp/src/tutorial.cxx
-      run: |
-        ls -l
-        ls -l src
-        ls -l src/tutorial.cxx
+      uses: actions/upload-artifact@v1
+      with:
+        name: tutorial.cxx
+        path: src/tutorial.cxx
+      # run: |
+      #   ls -l
+      #   ls -l src
+      #   ls -l src/tutorial.cxx
