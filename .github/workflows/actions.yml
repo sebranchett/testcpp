@@ -45,3 +45,11 @@ jobs:
       # Execute tests defined by the CMake configuration.  
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest -C $BUILD_TYPE
+
+    - name: Upload logs
+      shell: bash
+      # if: failure()
+      uses: actions/upload-artifact@v1
+      with:
+        name: "${{ matrix.os }}"_LatestTest.log
+        path: src/tutorial.cxx
