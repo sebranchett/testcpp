@@ -49,9 +49,9 @@ jobs:
     - name: Upload logs
       shell: bash
       working-directory: ${{runner.workspace}}
-      # if: failure()
-      # uses: actions/upload-artifact@v1
-      # with:
-      #   name: tutorial.cxx
-      #   path: src/tutorial.cxx
-      run: ls -l
+      if: failure()
+      uses: actions/upload-artifact@v1
+      with:
+        name: tutorial.cxx
+        path: testcpp/src/tutorial.cxx
+      # run: ls -l
