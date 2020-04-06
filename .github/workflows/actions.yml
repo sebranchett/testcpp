@@ -51,7 +51,7 @@ jobs:
       # if: failure()
       uses: actions/upload-artifact@v1
       with:
-        name: tutorial.cxx
+        name: ${{ matrix.os }}_tutorial.cxx
         path: src/tutorial.cxx
       # run: |
       #   ls -l
