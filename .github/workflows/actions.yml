@@ -53,5 +53,6 @@ jobs:
       #   name: tutorial.cxx
       #   path: testcpp/src/tutorial.cxx
       run: |
+        ls -l
         ls -l testcpp
         ls -l testcpp/src
